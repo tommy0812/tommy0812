@@ -12,7 +12,9 @@ NVIDIA Jetson AGX Orin.
 
 ### 📊 [Model Compression & Edge Deployment — Full Results](https://github.com/tommy0812/model-compression)
 
-A complete, benchmarked compression pipeline on MobileViTv3 / ImageNet-100:
+A complete, benchmarked compression pipeline on MobileViTv3 / ImageNet-100 — per-method
+tables, RTX 4090 vs. Jetson Orin engine comparison, the papers re-implemented, and how INT8
+coverage was actually measured:
 
 | | |
 |---|---|
@@ -21,10 +23,6 @@ A complete, benchmarked compression pipeline on MobileViTv3 / ImageNet-100:
 | **Quantization** | **62.30%** Top-1 INT8 — +0.56 pp vs. AdaRound, +0.26 pp vs. APHQ-ViT |
 | **Jetson AGX Orin** | **62.40%** Top-1 (−0.34 pp vs. FP32), **0.864 ms** / **1,118 QPS** |
 | **INT8 coverage** | **96.6%** of compute-bound layers (57/59) vs. 66.7% for NVIDIA ModelOpt |
-
-**[→ Read the full experimental report](https://github.com/tommy0812/model-compression)** — per-method tables,
-RTX 4090 vs. Jetson Orin engine comparison, the papers re-implemented, and how INT8 coverage
-was actually measured.
 
 ---
 
