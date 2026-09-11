@@ -6,7 +6,8 @@ Compal Electronics · M.S. Electrical and Computer Engineering, NYCU
 I build vision models small enough and fast enough to run on embedded hardware, and I
 measure every step of the way: structured pruning → knowledge distillation → post-training
 quantization with block-wise reconstruction → ONNX Explicit QDQ → TensorRT INT8 →
-NVIDIA Jetson AGX Orin.
+NVIDIA Jetson AGX Orin. Before that I worked the other end of the same problem — monocular
+depth estimation, scale recovery, and multi-sensor perception for SLAM and AR-HUD.
 
 ---
 
@@ -23,6 +24,20 @@ coverage was actually measured:
 | **Quantization** | **62.30%** Top-1 INT8 — +0.56 pp vs. AdaRound, +0.26 pp vs. APHQ-ViT |
 | **Jetson AGX Orin** | **62.40%** Top-1 (−0.34 pp vs. FP32), **0.864 ms** / **1,118 QPS** |
 | **INT8 coverage** | **96.6%** of compute-bound layers (57/59) vs. 66.7% for NVIDIA ModelOpt |
+
+---
+
+### 🎯 [Metric-Scale Monocular Depth Estimation — M.S. Thesis](https://github.com/tommy0812/tommy0812/blob/main/Depth_Estimation_Thesis.md)
+
+Recovering real-world scale for self-supervised monocular depth using instance-segmented
+objects as a stereo texture prior, evaluated against LiDAR ground truth and in RGB-D SLAM:
+
+| | |
+|---|---|
+| **Scale-recovery runtime** | **17 ms** vs. 418 ms for the dense-geometry baseline — **24.6× faster** (Jetson AGX Xavier) |
+| **Depth accuracy** | Lowest RMSE on all 4 datasets; best Abs Rel and δ<1.05 in the 0–10 m band |
+| **SLAM trajectory** | Lowest mean ATE on **all 11 sequences** — −25.2% vs. RGB-LD |
+| **Relocalization** | **98.3%** and **99.8%** against maps built 5 months earlier |
 
 ---
 
