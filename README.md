@@ -6,12 +6,12 @@ Compal Electronics · M.S. Electrical and Computer Engineering, NYCU
 I build vision models small enough and fast enough to run on embedded hardware, and I
 measure every step of the way: structured pruning → knowledge distillation → post-training
 quantization with block-wise reconstruction → ONNX Explicit QDQ → TensorRT INT8 →
-NVIDIA Jetson AGX Orin. Most of that work now points at depth — compressing depth foundation
+NVIDIA Jetson AGX Orin. Most of that work now points at depth — compressing depth estimation
 models, and earlier, recovering metric scale for monocular depth on embedded hardware.
 
 ---
 
-### 🧭 [Depth Anything 3 — Compressing a Depth Foundation Model](https://github.com/tommy0812/model-compression/blob/main/DA3_Compression_Results.md)
+### 🧭 [Depth Anything 3 — Compressing a Depth Estimation Model](https://github.com/tommy0812/model-compression/blob/main/DA3_Compression_Results.md)
 
 Taking the compression pipeline below from classification to multi-view metric depth, where the
 output is geometry and every difference carries a confidence interval *(in progress)*:
