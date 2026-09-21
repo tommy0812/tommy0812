@@ -6,8 +6,22 @@ Compal Electronics · M.S. Electrical and Computer Engineering, NYCU
 I build vision models small enough and fast enough to run on embedded hardware, and I
 measure every step of the way: structured pruning → knowledge distillation → post-training
 quantization with block-wise reconstruction → ONNX Explicit QDQ → TensorRT INT8 →
-NVIDIA Jetson AGX Orin. Before that I worked the other end of the same problem — monocular
-depth estimation, scale recovery, and multi-sensor perception for SLAM and AR-HUD.
+NVIDIA Jetson AGX Orin. Most of that work now points at depth — compressing depth foundation
+models, and earlier, recovering metric scale for monocular depth on embedded hardware.
+
+---
+
+### 🧭 [Depth Anything 3 — Compressing a Depth Foundation Model](https://github.com/tommy0812/model-compression/blob/main/DA3_Compression_Results.md)
+
+Taking the compression pipeline below from classification to multi-view metric depth, where the
+output is geometry and every difference carries a confidence interval *(in progress)*:
+
+| | |
+|---|---|
+| **Compute parity** | 729.1 → **205–210 GFLOPs** vs. DA3-Small's 205.6 (101.97M → 26–32M params) |
+| **Free compute found by profiling** | **31.5 GFLOPs removed bit-exactly** — the DualDPT head runs three auxiliary branches whose output is never read |
+| **Distillation after pruning** | worth **4×** more than on the released small model (−0.0045 vs. −0.0011 abs_rel) |
+| **Headline result** | **negative, and reported as such** — a pruned DA3-BASE does not reach a DA3-Small carrying full DINOv2 pretraining |
 
 ---
 
