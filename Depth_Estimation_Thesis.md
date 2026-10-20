@@ -252,26 +252,6 @@ Stated plainly, as in the thesis:
 
 ---
 
-## What I did next
-
-That last limitation is the thread I have been pulling ever since. My current work is exactly
-the "accelerate it or change the architecture" half of the problem: structured pruning for
-CNNs and Vision Transformers, knowledge distillation, and INT8 post-training quantization with
-Hessian-aware block-wise reconstruction, taken all the way to TensorRT engines on NVIDIA
-Jetson.
-
-**[github.com/tommy0812/model-compression](https://github.com/tommy0812/model-compression)** —
-a MobileViTv3 backbone compressed by **68% in parameters and 69% in MACs**, deployed as an INT8
-TensorRT engine on Jetson AGX Orin at **0.864 ms** within **0.34 pp** of FP32 accuracy, with
-96.6% of compute-bound layers running INT8 kernels.
-
-A monocular depth network is the same class of target: an encoder–decoder whose cost is
-dominated by convolutions and matrix multiplies that quantize well. The thesis established
-what the depth system has to produce; the compression work is how it gets small enough to run
-where it is needed.
-
----
-
 ## Reference
 
 **Self-supervised Monocular Depth Estimation with Scale Recovery by Object Stereo Depth for
