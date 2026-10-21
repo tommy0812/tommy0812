@@ -19,15 +19,9 @@ three platforms — every number from a `trtexec` log or a full validation run:
 | | |
 |---|---|
 | **Pruning** | MobileViTv3-XS down to the XXS MAC budget: **−54% parameters**, **+1.22 pp Top-1** over the XXS-KD baseline |
-| **PTQ reconstruction** | **+4.6–4.8 pp Top-1 over NVIDIA ModelOpt** at identical latency and INT8 coverage, on all three platforms |
-| **Deployment** | INT8 TensorRT on RTX 4090, RTX 4050 and Jetson AGX Orin — **1.6–2.1× FP32 speed**, within 0.16 pp of FP32 Top-1 |
-| **INT8 coverage** | **91% of layers (74/81)** against 53% for TensorRT's implicit PTQ |
-
----|---|
-| **Pruning** | MobileViTv3-XS down to the XXS MAC budget: **−57% parameters**, **+2.13 pp Top-1** over the XXS-KD baseline |
-| **PTQ reconstruction** | **+1.88 pp Top-1 over NVIDIA ModelOpt** at identical latency and INT8 coverage (RTX 4090; +1.32 pp on Jetson AGX Orin) |
-| **Deployment** | INT8 TensorRT on RTX 4090, RTX 4050 and Jetson AGX Orin — **1.5–1.75× FP32 speed**, 0.30–0.52 pp below FP32 Top-1 |
-| **INT8 coverage** | **88% of layers (66/75)** against 55% for TensorRT's implicit PTQ |
+| **PTQ reconstruction** | **+4.5–4.7 pp Top-1 over NVIDIA ModelOpt** at 4–8% lower latency, on all three platforms |
+| **Deployment** | INT8 TensorRT on RTX 4090, RTX 4050 and Jetson AGX Orin — with residual-add quantization **1.7–2.3× FP32 speed** and faster than FP16 on every platform, within 0.34 pp of FP32 Top-1 |
+| **INT8 coverage** | **95% of layers (77/81)** with residual-add quantization, against 53% for TensorRT's implicit PTQ |
 
 ---
 
